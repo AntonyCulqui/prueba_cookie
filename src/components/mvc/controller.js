@@ -4,18 +4,29 @@ async function obtener_nombre(data) {
     try {
 
         const {dominio} = data;
-
+        
         if(dominio){
-
+           
             let result = await dominioDao.obtener_nombre(dominio);
 
-            if(result.length !== 0){
-                return respuesta_envio_api(true, "SUCCESS", "Se realizo correctamente", result);
+            if( result !== null){
+
+                const response = {
+                    dominio: result.nombre,
+                }
+
+                return response;
+
             }else{
-                return respuesta_envio_api(true, "SUCCESS", "Se realizo correctamente",[{nombre:dominio}]);
+                
+                const response = {
+                    dominio
+                }
+
+                return response;
             }
 
-           
+            console.log(dominio);
 
         }else{
             return respuesta_envio_api(true, "FALSE", "No se han enviado los parámetros correctos", []);

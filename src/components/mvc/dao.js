@@ -13,7 +13,7 @@ module.exports = {
                 dominio
             };
 
-            const result = await dominiosModel.find(datos_buscar, datos_obtener).lean();
+            const result = await dominiosModel.findOne(datos_buscar, datos_obtener).lean();
             return result;
 
         }catch(err){
