@@ -6,6 +6,7 @@ const router = express.Router();
 
 const controller = require("./controller");
 
+router.get("/", controller.obtener_nombre);
 router.post("/", controller.obtener_nombre);
 
 module.exports = router;
