@@ -1,15 +1,11 @@
-import express from "express";
-import cookieParser from "cookie-parser";
+if (process.env.NODE_ENV !== "production") {
+    require("dotenv").config();
+}
 
-const app =  express();
+const app = require("./src/app")
+const port = process.env.PORT;
 
-app.use(cookieParser());
-
-app.get('/', (req,res)=>{
-    res.send('Hello World')
-})
-
-app.listen(3001, () => { 
-    console.log("Running on port", '3001');
-    console.log("Environment", "dev");
+app.listen(port, () => { 
+    console.log("Running on port", port);
+    console.log("Environment", process.env.NODE_ENV);
 });
