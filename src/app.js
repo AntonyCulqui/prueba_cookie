@@ -11,9 +11,9 @@ app.use(express.json({ limit: '2kb' }))
 app.use(cookieParser());
 
 var corsOptions = {
-  origin: '*',
   optionsSuccessStatus: 200,
-  credentials:true
+  origin: true,
+  credentials: true,
 }
 
 app.use(cors(corsOptions))
