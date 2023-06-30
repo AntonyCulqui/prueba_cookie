@@ -18,7 +18,7 @@ module.exports = {
         try {
             const data = req.query;
             const info = await obtener_nombre(data);
-            res.cookie("prueba_cookie", "valor cookire",{maxAge: 10000, httpOnly: true , secure: true, sameSite:'none'});
+            res.cookie("prueba_cookie1", "valor cookire",{maxAge: 10000,secure: true, sameSite:'none'});
             return res.json(info);
         } catch (err) {
             info = {
