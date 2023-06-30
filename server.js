@@ -10,6 +10,6 @@ app.get('/', (req,res)=>{
 })
 
 app.listen(3001, () => { 
-    console.log("Running on port", port);
+    console.log("Running on port", '3001');
     console.log("Environment", "dev");
 });
