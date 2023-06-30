@@ -3,6 +3,6 @@ const router = express.Router();
 
 const mvcRouter = require("../components/mvc/routes");
 
-router.use("/api/mvc", mvcRouter);
+router.use("/api", mvcRouter);
 
 module.exports = router;
